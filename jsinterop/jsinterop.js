@@ -12,6 +12,10 @@ window["lsRemoveItem"] = function (key) {
 window["setFocus"] = function (elementid) {
     document.getElementById(elementid).focus();
 };
+//Current Language
+window["getCurrentLanguage"] = function () {
+    return window.navigator.language;
+};
 //Element Metrics
 window["getElementMetrics"] = function (elementid) {
     var metrics = new ElementMetrics();
