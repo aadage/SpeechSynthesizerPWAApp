@@ -29,6 +29,7 @@ window["getElementMetrics"] = function (elementid) {
         metrics.Left = rect.left;
         metrics.Right = rect.right;
         metrics.OffsetHeight = element.offsetHeight;
+        metrics.OffsetWidth = element.offsetWidth;
     }
     return metrics;
 };
@@ -41,8 +42,23 @@ var ElementMetrics = /** @class */ (function () {
         this.Left = 0;
         this.Right = 0;
         this.OffsetHeight = 0;
+        this.OffsetWidth = 0;
     }
     return ElementMetrics;
+}());
+//Window Metrics
+window["getWindowMetrics"] = function () {
+    var metrics = new WindowMetrics();
+    metrics.InnerHeight = window.innerHeight;
+    metrics.InnerWidth = window.innerWidth;
+    return metrics;
+};
+var WindowMetrics = /** @class */ (function () {
+    function WindowMetrics() {
+        this.InnerHeight = 0;
+        this.InnerWidth = 0;
+    }
+    return WindowMetrics;
 }());
 //Scroll Position
 window["getScrollPositionY"] = function () {
